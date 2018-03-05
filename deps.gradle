@@ -1,0 +1,85 @@
+ext {
+    versions = [
+            BUILD_TOOLS: '27.0.3',
+            MIN_SDK    : 16,
+            TARGET_SDK : 27,
+            SUPPORT    : '27.0.2',
+            OK_HTTP    : '3.4.1',
+            RETROFIT   : '2.3.0',
+            KODEIN     : '4.1.0',
+            CONDUCTOR  : '2.1.4',
+            RX_JAVA    : '2.1.9',
+            RX_ANDROID : '2.0.2',
+            RX_PM      : '1.1.2',
+            RX_BINDING : '2.1.1',
+            GLIDE      : '4.6.1',
+            STETHO     : '1.5.0',
+            JUNIT      : '4.12',
+            TEST_RUNNER: '1.0.1',
+            ESPRESSO   : '3.0.1'
+    ]
+
+    support = [
+            appcompatV7 : "com.android.support:appcompat-v7:$versions.SUPPORT",
+            recyclerView: "com.android.support:recyclerview-v7:$versions.SUPPORT",
+            design      : "com.android.support:design:$versions.SUPPORT",
+            cardView    : "com.android.support:cardview-v7:$versions.SUPPORT"
+    ]
+
+    okHttp = [
+            logger: "com.squareup.okhttp3:logging-interceptor:$versions.OK_HTTP",
+            self  : "com.squareup.okhttp3:okhttp:$versions.OK_HTTP"
+    ]
+
+    retrofit = [
+            retrofit     : "com.squareup.retrofit2:retrofit:$versions.RETROFIT",
+            rxAdapter    : "com.squareup.retrofit2:adapter-rxjava2:$versions.RETROFIT",
+            gsonConverter: "com.squareup.retrofit2:converter-gson:$versions.RETROFIT"
+    ]
+
+    kodein = [
+            kodein       : "com.github.salomonbrys.kodein:kodein:$versions.KODEIN",
+            kodeinAndroid: "com.github.salomonbrys.kodein:kodein-android:$versions.KODEIN"
+    ]
+
+    conductor = [
+            conductor        : "com.bluelinelabs:conductor:$versions.CONDUCTOR",
+            conductor_support: "com.bluelinelabs:conductor-support:$versions.CONDUCTOR"
+    ]
+
+    rxJava = [
+            rxJava   : "io.reactivex.rxjava2:rxjava:$versions.RX_JAVA",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.RX_ANDROID"
+    ]
+
+    rxPM = [
+            rxPM     : "me.dmdev.rxpm:rxpm:$versions.RX_PM",
+            rxBinding: "com.jakewharton.rxbinding2:rxbinding-kotlin:$versions.RX_BINDING"
+    ]
+
+    stetho = [
+            stetho       : "com.facebook.stetho:stetho:$versions.STETHO",
+            stetho_okhhtp: "com.facebook.stetho:stetho-okhttp3:$versions.STETHO"
+    ]
+
+    test = [
+            junit: "junit:junit:$versions.JUNIT"
+    ]
+
+    androidTest = [
+            runner  : "com.android.support.test:runner:$versions.TEST_RUNNER",
+            espresso: "com.android.support.test.espresso:espresso-core:$versions.ESPRESSO"
+    ]
+
+    supportLibs = support.values()
+    okHttpLibs = okHttp.values()
+    retrofitLibs = retrofit.values()
+    kodeinLibs = kodein.values()
+    conductorLibs = conductor.values()
+    rxJavaLibs = rxJava.values()
+    rxPMLibs = rxPM.values()
+    stethoLibs = stetho.values()
+    testLibs = test.values()
+    androidTestLibs = androidTest.values()
+
+}

@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../deps.gradle'
+
+android {
+    compileSdkVersion versions.TARGET_SDK
+    buildToolsVersion versions.BUILD_TOOLS
+    defaultConfig {
+        applicationId "com.example.revern.rxpmbase"
+        minSdkVersion versions.MIN_SDK
+        targetSdkVersion versions.TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("$rootDir/debug.jks")
+            storePassword "123456"
+            keyAlias "debugAlias"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    implementation supportLibs
+    implementation retrofitLibs
+    implementation okHttpLibs
+    implementation kodeinLibs
+    implementation rxJavaLibs
+    implementation rxPMLibs
+    implementation conductorLibs
+
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    implementation "com.github.bumptech.glide:glide:$versions.GLIDE"
+    kapt "com.github.bumptech.glide:compiler:$versions.GLIDE"
+
+    debugImplementation stethoLibs
+
+    testImplementation testLibs
+
+    androidTestImplementation androidTestLibs
+}
