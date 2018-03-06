@@ -1,4 +1,4 @@
-package com.example.revern.rxpmbase.di
+package com.example.revern.rxpmbase.di.modules
 
 import android.content.Context
 import com.example.revern.rxpmbase.api.Api
