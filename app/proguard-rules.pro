@@ -71,8 +71,9 @@
     public <init>(android.content.Context);
 }
 
-#models
+#models/entity
 -keep class **.models.** { *; }
+-keep class **.entity.** { *; }
 -keepclassmembers enum * { *; }
 
 # Kotlin
