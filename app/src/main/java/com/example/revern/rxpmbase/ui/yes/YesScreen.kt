@@ -20,11 +20,14 @@ class YesScreen : BaseScreen<YesPM>() {
 
     override fun providePresentationModel(): YesPM = di.instance()
 
-    @BindView(R.id.gif_yes) lateinit var uiGifYes: ImageView
+    @BindView(R.id.gif_yes)
+    lateinit var uiGifYes: ImageView
 
-    @BindView(R.id.refresh_yes_gif_btn) lateinit var uiRefreshYes: Button
+    @BindView(R.id.refresh_yes_gif_btn)
+    lateinit var uiRefreshYes: Button
 
-    @OnClick(R.id.show_no_gif) fun onClickShowNo() {
+    @OnClick(R.id.show_no_gif)
+    fun onClickShowNo() {
         router.pushController(RouterTransaction.with(NoScreen()).pushChangeHandler(FadeChangeHandler()).popChangeHandler(FadeChangeHandler()))
     }
 
@@ -37,7 +40,9 @@ class YesScreen : BaseScreen<YesPM>() {
     }
 
     private fun showGif(gifUrl: String) {
-        Glide.with(activity!!).asGif().load(gifUrl).into(uiGifYes)
+        activity?.let {
+            Glide.with(it).asGif().load(gifUrl).into(uiGifYes)
+        }
     }
 
 }
