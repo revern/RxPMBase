@@ -14,7 +14,7 @@ detekt {
     version = "1.0.0.RC6-4"
     profile("main") {
         input = "${project.rootDir}/${project.getName()}/src/main/java"
-//        config = "${project.rootDir}/AndroidCodeQualityConfig/quality/detekt/detekt-config.yml"
+        config = "${project.rootDir}/AndroidCodeQualityConfig/quality/detekt/detekt-config.yml"
         filters = ".*test.*,.*/resources/.*,.*/tmp/.*"
         output = "${project.rootDir}/${project.getName()}/build/reports/detekt"
     }
