@@ -218,7 +218,7 @@ potential-bugs:
   ExplicitGarbageCollectionCall:
     active: true
   LateinitUsage:
-    active: true
+    active: false
     excludeAnnotatedProperties: "InjectPresenter"
     ignoreOnClassesPattern: ""
   UnconditionalJumpStatementInLoop:

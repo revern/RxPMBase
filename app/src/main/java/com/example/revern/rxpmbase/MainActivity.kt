@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
-import com.example.revern.rxpmbase.di.di
 import com.example.revern.rxpmbase.ui.yes.YesScreen
 import kotlinx.android.synthetic.main.activity_main.*
 

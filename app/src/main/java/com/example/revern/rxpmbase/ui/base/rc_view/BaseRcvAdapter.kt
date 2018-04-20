@@ -15,12 +15,12 @@ open class BaseRcvAdapter<T, VH : BaseRcvHolder<T>>(
         holder.itemView.setOnClickListener { view ->
             val position = holder.adapterPosition
             if (position != RecyclerView.NO_POSITION)
-                onRcvItemClickListener?.onItemClick(view, getItems()[position])
+                onRcvItemClickListener?.onItemClick(view, items[position])
         }
         return holder
     }
 
-    override fun onBindViewHolder(holder: VH, position: Int) = holder.bind(getItems()[position])
+    override fun onBindViewHolder(holder: VH, position: Int) = holder.bind(items[position])
 
     override fun getItemCount() = items.size
 
