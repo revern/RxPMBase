@@ -1,4 +1,4 @@
-package com.helper.revern.base.rc_view
+package com.example.revern.rxpmbase.ui.base.rc_view
 
 import android.view.View
 

@@ -1,4 +1,4 @@
-package com.helper.revern.base.rc_view
+package com.example.revern.rxpmbase.ui.base.rc_view
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
@@ -23,10 +23,6 @@ open class BaseRcvAdapter<T, VH : BaseRcvHolder<T>>(
     override fun onBindViewHolder(holder: VH, position: Int) = holder.bind(items[position])
 
     override fun getItemCount() = items.size
-
-    fun getItems(): List<T> {
-        return items
-    }
 
     fun add(item: T) {
         items.add(item)
