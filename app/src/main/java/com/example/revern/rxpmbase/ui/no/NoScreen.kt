@@ -22,7 +22,6 @@ class NoScreen : BaseScreen<NoPM>() {
 
     @BindView(R.id.gif_no)
     lateinit var uiGifNo: ImageView
-
     @BindView(R.id.refresh_no_gif_btn)
     lateinit var uiRefreshNo: Button
 
@@ -43,7 +42,10 @@ class NoScreen : BaseScreen<NoPM>() {
 
     private fun showGif(gifUrl: String) {
         activity?.let {
-            Glide.with(it).asGif().load(gifUrl).into(uiGifNo)
+            Glide.with(it)
+                    .asGif()
+                    .load(gifUrl)
+                    .into(uiGifNo)
         }
     }
 

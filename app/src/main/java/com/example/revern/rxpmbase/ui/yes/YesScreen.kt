@@ -41,7 +41,10 @@ class YesScreen : BaseScreen<YesPM>() {
 
     private fun showGif(gifUrl: String) {
         activity?.let {
-            Glide.with(it).asGif().load(gifUrl).into(uiGifYes)
+            Glide.with(it)
+                    .asGif()
+                    .load(gifUrl)
+                    .into(uiGifYes)
         }
     }
 

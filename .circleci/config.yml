@@ -21,11 +21,12 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run Tests
-          command: ./gradlew lint test
+          name: Run Static code analyzers
+          command: ./gradlew detektCheck checkstyle pmd lintProductionRelease
       - run:
           name: Run Tests
           command: ./gradlew assembleDebug
+      destination: reports
       - store_artifacts:
           path: app/build/reports
           destination: reports
