@@ -8,6 +8,7 @@ import retrofit2.http.Query
 
 interface Api {
 
-    @GET(BuildConfig.API_BASE_URL) fun  take(@Query("force") value: String): Flowable<YesNoResponse>
+    @GET(BuildConfig.API_BASE_URL)
+    fun take(@Query("force") value: String): Flowable<YesNoResponse>
 
 }

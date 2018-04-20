@@ -28,7 +28,10 @@ class YesScreen : BaseScreen<YesPM>() {
 
     @OnClick(R.id.show_no_gif)
     fun onClickShowNo() {
-        router.pushController(RouterTransaction.with(NoScreen()).pushChangeHandler(FadeChangeHandler()).popChangeHandler(FadeChangeHandler()))
+        router.pushController(RouterTransaction
+                .with(NoScreen())
+                .pushChangeHandler(FadeChangeHandler())
+                .popChangeHandler(FadeChangeHandler()))
     }
 
     override fun onBindPresentationModel(pm: YesPM) {
