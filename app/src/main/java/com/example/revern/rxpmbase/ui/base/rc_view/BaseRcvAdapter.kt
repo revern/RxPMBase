@@ -10,8 +10,8 @@ open class BaseRcvAdapter<T, VH : BaseRcvHolder<T>>(
         private var onRcvItemClickListener: OnRcvItemClickListener<T>? = null)
     : RecyclerView.Adapter<VH>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): VH {
-        val holder = holderCreator.apply(parent!!)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+        val holder = holderCreator.apply(parent)
         holder.itemView.setOnClickListener { view ->
             val position = holder.adapterPosition
             if (position != RecyclerView.NO_POSITION)

@@ -20,11 +20,14 @@ class NoScreen : BaseScreen<NoPM>() {
 
     override fun providePresentationModel(): NoPM = di.instance()
 
-    @BindView(R.id.gif_no) lateinit var uiGifNo: ImageView
+    @BindView(R.id.gif_no)
+    lateinit var uiGifNo: ImageView
 
-    @BindView(R.id.refresh_no_gif_btn) lateinit var uiRefreshNo: Button
+    @BindView(R.id.refresh_no_gif_btn)
+    lateinit var uiRefreshNo: Button
 
-    @OnClick(R.id.show_yes_gif) fun onClickShowNo() {
+    @OnClick(R.id.show_yes_gif)
+    fun onClickShowNo() {
         router.pushController(RouterTransaction.with(YesScreen())
                 .pushChangeHandler(FadeChangeHandler())
                 .popChangeHandler(FadeChangeHandler()))
@@ -39,7 +42,9 @@ class NoScreen : BaseScreen<NoPM>() {
     }
 
     private fun showGif(gifUrl: String) {
-        Glide.with(activity!!).asGif().load(gifUrl).into(uiGifNo)
+        activity?.let {
+            Glide.with(it).asGif().load(gifUrl).into(uiGifNo)
+        }
     }
 
 }

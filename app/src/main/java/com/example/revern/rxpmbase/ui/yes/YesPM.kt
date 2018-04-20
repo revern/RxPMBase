@@ -29,4 +29,5 @@ class YesPM(private val interactor: YesNoInteractor) : BasePresentationModel() {
                     refreshYes.consumer.accept(it.image)
                 }
     }
+
 }
