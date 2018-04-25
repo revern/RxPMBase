@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RxPMBase</string>
+    <string name="refresh_no_gif">Refresh NO Gif</string>
+    <string name="show_yes_gif">Show YES Gif</string>
 </resources>

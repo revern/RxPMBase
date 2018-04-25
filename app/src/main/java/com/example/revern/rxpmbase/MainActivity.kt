@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        router = Conductor.attachRouter(this, uiScreenContainer, savedInstanceState)
+        router = Conductor.attachRouter(this, screen_container, savedInstanceState)
         if (!router.hasRootController()) {
             router.setRoot(RouterTransaction.with(YesScreen()))
         }

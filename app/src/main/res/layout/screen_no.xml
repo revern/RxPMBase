@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/gif_no"
-        android:text="refresh no gif"
+        android:text="@string/refresh_no_gif"
         />
 
     <Button
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/gif_no"
         android:layout_toRightOf="@+id/refresh_no_gif_btn"
-        android:text="show yes gif"
+        android:text="@string/show_yes_gif"
         />
 
 </RelativeLayout>
