@@ -19,7 +19,5 @@ fun initKodeinDI(app: Application) {
         import(appModule(app))
         import(netModule(BuildConfig.API_BASE_URL))
         bind<YesNoInteractor>() with singleton { YesNoInteractor(instance()) }
-        bind<YesPM>() with singleton { YesPM(instance()) }
-        bind<NoPM>() with singleton { NoPM(instance()) }
     }
 }

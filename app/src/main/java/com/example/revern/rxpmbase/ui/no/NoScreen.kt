@@ -17,7 +17,7 @@ class NoScreen : BaseScreen<NoPM>() {
 
     override val screenLayout = R.layout.screen_no
 
-    override fun providePresentationModel(): NoPM = di.instance()
+    override fun providePresentationModel(): NoPM = NoPM(di.instance())
 
     @BindView(R.id.gif_no)
     lateinit var uiGifNo: ImageView

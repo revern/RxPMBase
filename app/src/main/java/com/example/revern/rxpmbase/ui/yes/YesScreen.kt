@@ -17,7 +17,7 @@ class YesScreen : BaseScreen<YesPM>() {
 
     override val screenLayout = R.layout.screen_yes
 
-    override fun providePresentationModel(): YesPM = di.instance()
+    override fun providePresentationModel(): YesPM = YesPM(di.instance())
 
     @BindView(R.id.gif_yes)
     lateinit var uiGifYes: ImageView
