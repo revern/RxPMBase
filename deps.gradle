@@ -6,7 +6,7 @@ ext {
             SUPPORT    : '27.1.1',
             OK_HTTP    : '3.4.1',
             RETROFIT   : '2.3.0',
-            KODEIN     : '4.1.0',
+            KODEIN     : '5.0.0',
             CONDUCTOR  : '2.1.4',
             RX_JAVA    : '2.1.9',
             RX_KOTLIN  : '2.2.0',
@@ -39,8 +39,7 @@ ext {
     ]
 
     kodein = [
-            kodein       : "com.github.salomonbrys.kodein:kodein:$versions.KODEIN",
-            kodeinAndroid: "com.github.salomonbrys.kodein:kodein-android:$versions.KODEIN"
+            kodein: "org.kodein.di:kodein-di-generic-jvm:$versions.KODEIN",
     ]
 
     conductor = [

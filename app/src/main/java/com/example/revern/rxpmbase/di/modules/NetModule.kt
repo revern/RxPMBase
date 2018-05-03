@@ -5,17 +5,17 @@ import com.example.revern.rxpmbase.api.Api
 import com.example.revern.rxpmbase.constants.CACHE_DIR_SIZE
 import com.example.revern.rxpmbase.constants.READ_TIMEOUT
 import com.example.revern.rxpmbase.utils.addStethoInterceptors
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.bind
-import com.github.salomonbrys.kodein.instance
-import com.github.salomonbrys.kodein.singleton
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import org.kodein.di.Kodein
+import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
+import org.kodein.di.generic.singleton
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.Retrofit
 
 fun netModule(baseUrl: String) = Kodein.Module {
 
@@ -36,18 +36,8 @@ fun netModule(baseUrl: String) = Kodein.Module {
 
 private fun createHttpClient(cachedDir: File): OkHttpClient {
     val httpClientBuilder = OkHttpClient.Builder()
-    httpClientBuilder.cache(Cache(cachedDir, CACHE_DIR_SIZE))
-    httpClientBuilder.readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+            .cache(Cache(cachedDir, CACHE_DIR_SIZE))
+            .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
     addStethoInterceptors(httpClientBuilder)
-    httpClientBuilder.addInterceptor { chain ->
-        //            if (userSettings.userHasToken()) {
-        //                Request request = chain.request().newBuilder()
-        //                    .addHeader("X-User-Token", userSettings.getToken())
-        //                    .addHeader("X-User-Phone-Number", userSettings.getPhone())
-        //                    .build();
-        //                return chain.proceed(request);
-        //            }
-        chain.proceed(chain.request())
-    }
     return httpClientBuilder.build()
 }

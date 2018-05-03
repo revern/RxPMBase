@@ -5,13 +5,13 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.revern.rxpmbase.utils.storage.IStorage
 import com.example.revern.rxpmbase.utils.storage.Storage
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.bind
-import com.github.salomonbrys.kodein.instance
-import com.github.salomonbrys.kodein.singleton
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import org.kodein.di.Kodein
+import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
+import org.kodein.di.generic.singleton
 
 fun appModule(application: Application) = Kodein.Module {
 

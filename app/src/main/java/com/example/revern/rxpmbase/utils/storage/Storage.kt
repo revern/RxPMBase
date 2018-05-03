@@ -1,7 +1,6 @@
 package com.example.revern.rxpmbase.utils.storage
 
 import android.content.SharedPreferences
-import com.example.revern.rxpmbase.utils.isEmptyString
 import com.google.gson.Gson
 import java.lang.reflect.Type
 
@@ -11,7 +10,7 @@ class Storage(private val sp: SharedPreferences, private val gson: Gson) : IStor
 
     override fun <T> get(key: String, type: Type): T? {
         val json = sp.getString(key, "")
-        return if (isEmptyString(json)) null else gson.fromJson(json, type)
+        return if (json.isNullOrEmpty()) null else gson.fromJson(json, type)
     }
 
     override fun putString(key: String, string: String) = sp.edit().putString(key, string).apply()

@@ -3,21 +3,19 @@ package com.example.revern.rxpmbase.ui.yes
 import android.widget.Button
 import android.widget.ImageView
 import butterknife.BindView
-import com.bluelinelabs.conductor.RouterTransaction
-import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
+import com.bluelinelabs.conductor.Router
 import com.bumptech.glide.Glide
 import com.example.revern.rxpmbase.R
 import com.example.revern.rxpmbase.di.di
 import com.example.revern.rxpmbase.ui.base.BaseScreen
-import com.example.revern.rxpmbase.ui.no.NoScreen
-import com.github.salomonbrys.kodein.instance
 import com.jakewharton.rxbinding2.view.clicks
+import org.kodein.di.generic.factory
 
 class YesScreen : BaseScreen<YesPM>() {
 
     override val screenLayout = R.layout.screen_yes
 
-    override fun providePresentationModel(): YesPM = YesPM(di.instance())
+    override val pmFactory: (Router) -> YesPM by di.factory()
 
     @BindView(R.id.gif_yes)
     lateinit var uiGifYes: ImageView
@@ -35,7 +33,6 @@ class YesScreen : BaseScreen<YesPM>() {
         uiShowNo.clicks() bindTo pm.showNoClick.consumer
 
         pm.yesGif.observable.bindTo { showGif(it) }
-        pm.showNo.observable.bindTo { showNo() }
     }
 
     private fun showGif(gifUrl: String) {
@@ -45,12 +42,6 @@ class YesScreen : BaseScreen<YesPM>() {
                     .load(gifUrl)
                     .into(uiGifYes)
         }
-    }
-
-    private fun showNo() {
-        router.replaceTopController(RouterTransaction.with(NoScreen())
-                .pushChangeHandler(FadeChangeHandler())
-                .popChangeHandler(FadeChangeHandler()))
     }
 
 }
