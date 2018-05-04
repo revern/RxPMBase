@@ -3,19 +3,16 @@ package com.example.revern.rxpmbase.ui.no
 import android.widget.Button
 import android.widget.ImageView
 import butterknife.BindView
-import com.bluelinelabs.conductor.Router
 import com.bumptech.glide.Glide
 import com.example.revern.rxpmbase.R
 import com.example.revern.rxpmbase.di.di
 import com.example.revern.rxpmbase.ui.base.BaseScreen
 import com.jakewharton.rxbinding2.view.clicks
-import org.kodein.di.generic.factory
+import org.kodein.di.generic.instance
 
 class NoScreen : BaseScreen<NoPM>() {
 
     override val screenLayout = R.layout.screen_no
-
-    override val pmFactory: (Router) -> NoPM by di.factory()
 
     @BindView(R.id.gif_no)
     lateinit var uiGifNo: ImageView
@@ -25,6 +22,11 @@ class NoScreen : BaseScreen<NoPM>() {
 
     @BindView(R.id.show_yes_gif)
     lateinit var uiShowYes: Button
+
+    override fun providePresentationModel(): NoPM {
+        val pm: NoPM by di.instance(arg = router)
+        return pm
+    }
 
     override fun onBindPresentationModel(pm: NoPM) {
         super.onBindPresentationModel(pm)

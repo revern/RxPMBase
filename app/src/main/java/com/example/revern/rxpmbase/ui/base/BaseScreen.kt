@@ -6,16 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import butterknife.ButterKnife
-import com.bluelinelabs.conductor.Router
 import me.dmdev.rxpm.base.PmController
 
 abstract class BaseScreen<PM : BasePresentationModel> : PmController<PM>() {
 
     protected abstract val screenLayout: Int
-
-    protected abstract val pmFactory: (Router) -> PM
-
-    override fun providePresentationModel(): PM = pmFactory.invoke(router)
 
     override fun createView(inflater: LayoutInflater, container: ViewGroup, savedViewState: Bundle?): View {
         val view = inflater.inflate(screenLayout, container, false)
