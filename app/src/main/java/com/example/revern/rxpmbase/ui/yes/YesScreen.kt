@@ -29,13 +29,11 @@ class YesScreen : BaseScreen<YesPM>() {
     }
 
     private fun showGif(gifUrl: String) {
-        activity?.let { activity ->
-            view?.let {
-                Glide.with(activity)
-                        .asGif()
-                        .load(gifUrl)
-                        .into(it.gif_yes)
-            }
+        view?.let {
+            Glide.with(it.context)
+                    .asGif()
+                    .load(gifUrl)
+                    .into(it.gif_yes)
         }
     }
 
