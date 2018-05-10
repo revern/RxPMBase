@@ -12,7 +12,7 @@
         />
 
     <Button
-        android:id="@+id/refresh_no_gif_btn"
+        android:id="@+id/btn_refresh_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/gif_no"
@@ -20,11 +20,11 @@
         />
 
     <Button
-        android:id="@+id/show_yes_gif"
+        android:id="@+id/btn_show_yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/gif_no"
-        android:layout_toRightOf="@+id/refresh_no_gif_btn"
+        android:layout_toRightOf="@+id/btn_refresh_no"
         android:text="@string/show_yes_gif"
         />
 

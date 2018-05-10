@@ -1,6 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.40'
-    ext.butterknife_version = '8.8.1'
+    ext.kotlin_version = '1.2.41'
 
     repositories {
         google()
@@ -11,7 +10,6 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
-        classpath "com.jakewharton:butterknife-gradle-plugin:$butterknife_version"
     }
 }
 

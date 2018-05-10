@@ -7,7 +7,6 @@
 * Kotlin
 * RxPM
 * Conductor
-* ButterKnife
 * Kodein
 * RxJava
 * Retrofit
