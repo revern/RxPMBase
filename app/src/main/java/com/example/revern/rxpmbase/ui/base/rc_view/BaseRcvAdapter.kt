@@ -7,15 +7,15 @@ import io.reactivex.functions.Function
 open class BaseRcvAdapter<T, VH : BaseRcvHolder<T>>(
         private var items: MutableList<T>,
         private var holderCreator: Function<ViewGroup, VH>,
-        private var onRcvItemClickListener: OnRcvItemClickListener<T>? = null)
+        private var onRcvItemClickFunc: ((T) -> Unit)? = null)
     : RecyclerView.Adapter<VH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val holder = holderCreator.apply(parent)
-        holder.itemView.setOnClickListener { view ->
+        holder.itemView.setOnClickListener {
             val position = holder.adapterPosition
             if (position != RecyclerView.NO_POSITION)
-                onRcvItemClickListener?.onItemClick(view, items[position])
+                onRcvItemClickFunc?.invoke(items[position])
         }
         return holder
     }
