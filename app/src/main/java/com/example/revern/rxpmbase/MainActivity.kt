@@ -1,6 +1,6 @@
 package com.example.revern.rxpmbase
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
@@ -27,6 +27,5 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-
 }
 

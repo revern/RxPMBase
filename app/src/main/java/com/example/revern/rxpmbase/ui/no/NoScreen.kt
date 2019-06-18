@@ -36,5 +36,4 @@ class NoScreen : BaseScreen<NoPM>() {
                     .into(it.gif_no)
         }
     }
-
 }

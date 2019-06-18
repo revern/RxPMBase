@@ -34,5 +34,4 @@ class Storage(private val sp: SharedPreferences, private val gson: Gson) : IStor
     override fun <T> getCollection(key: String, type: Type): List<T>? = get(key, type)
 
     override fun remove(key: String) = sp.edit().remove(key).apply()
-
 }

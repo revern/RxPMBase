@@ -1,7 +1,7 @@
 package com.example.revern.rxpmbase.ui.base.rc_view
 
-import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.functions.Function
 
 open class BaseRcvAdapter<T, VH : BaseRcvHolder<T>>(
@@ -37,5 +37,4 @@ open class BaseRcvAdapter<T, VH : BaseRcvHolder<T>>(
         items.removeAt(position)
         notifyItemRemoved(position)
     }
-
 }

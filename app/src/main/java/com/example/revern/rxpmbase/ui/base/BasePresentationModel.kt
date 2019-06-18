@@ -14,5 +14,4 @@ abstract class BasePresentationModel : PresentationModel() {
     protected fun showError(error: String?) {
         errors.consumer.accept(error ?: "Unknown error")
     }
-
 }

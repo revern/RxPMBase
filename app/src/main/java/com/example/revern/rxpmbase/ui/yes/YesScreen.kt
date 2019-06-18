@@ -36,5 +36,4 @@ class YesScreen : BaseScreen<YesPM>() {
                     .into(it.gif_yes)
         }
     }
-
 }

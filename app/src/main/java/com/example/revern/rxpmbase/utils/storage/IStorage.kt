@@ -29,5 +29,4 @@ interface IStorage {
     fun <T> getCollection(key: String, type: Type): List<T>?
 
     fun remove(key: String)
-
 }

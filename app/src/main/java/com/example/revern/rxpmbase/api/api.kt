@@ -10,5 +10,4 @@ interface Api {
 
     @GET(BuildConfig.API_BASE_URL)
     fun take(@Query("force") value: String): Flowable<YesNoResponse>
-
 }

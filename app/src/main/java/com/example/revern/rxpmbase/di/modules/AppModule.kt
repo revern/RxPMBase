@@ -26,5 +26,4 @@ fun appModule(application: Application) = Kodein.Module {
     }
 
     bind<IStorage>() with singleton { Storage(instance(), instance()) }
-
 }

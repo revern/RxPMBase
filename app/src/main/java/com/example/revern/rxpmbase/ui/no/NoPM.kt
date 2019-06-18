@@ -42,5 +42,4 @@ class NoPM(private val router: Router,
     private fun showYesScreen() = router.replaceTopController(
             RouterTransaction.with(YesScreen())
                     .applyFadeAnimations())
-
 }

@@ -12,5 +12,4 @@ class App : Application() {
         initKodeinDI(this)
         initializeStetho(this)
     }
-
 }

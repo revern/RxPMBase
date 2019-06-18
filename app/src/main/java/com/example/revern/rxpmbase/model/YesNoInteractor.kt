@@ -9,5 +9,4 @@ class YesNoInteractor(private val api: Api) {
     fun takeYes(): Flowable<YesNoResponse> = api.take("yes")
 
     fun takeNo(): Flowable<YesNoResponse> = api.take("no")
-
 }

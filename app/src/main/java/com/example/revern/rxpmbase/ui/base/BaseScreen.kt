@@ -23,5 +23,4 @@ abstract class BaseScreen<PM : BasePresentationModel> : PmController<PM>() {
     protected open fun showError(errorMessage: String) {
         Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
     }
-
 }
