@@ -7,6 +7,7 @@ import com.example.revern.rxpmbase.model.YesNoInteractor
 import com.example.revern.rxpmbase.ui.base.BasePresentationModel
 import com.example.revern.rxpmbase.ui.yes.YesScreen
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
@@ -19,6 +20,8 @@ class NoPM(private val router: Router,
     val refreshNoClick = Action<Unit>()
     val showYesClick = Action<Unit>()
 
+    var disposable: Disposable? = null
+
     override fun onCreate() {
         super.onCreate()
 
@@ -29,7 +32,7 @@ class NoPM(private val router: Router,
     }
 
     private fun loadGif() {
-        interactor.takeNo()
+        disposable = interactor.takeNo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(onNext = {
