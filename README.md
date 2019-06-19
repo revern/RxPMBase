@@ -1,7 +1,6 @@
 [![CircleCI](https://circleci.com/gh/revern/RxPMBase/tree/master.svg?style=svg)](https://circleci.com/gh/revern/RxPMBase/tree/master)
 
-[Download APK][downloadAPK]
-[downloadAPK]: https://21-123851365-gh.circle-artifacts.com/0/apks/debug/app-debug.apk
+[Download APK][1]
 
 # RxPMBase
 ### Skeleton for Android projects based on RxPM architecture
@@ -15,3 +14,5 @@
 * Retrofit
 * Glide
 * Stetho
+
+[1]: https://22-123851365-gh.circle-artifacts.com/0/apks/debug/app-debug.apk/
